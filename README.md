@@ -42,7 +42,7 @@ python app.py                        # launches the draw-a-digit demo locally
 
 ```
 nn/
-  layers.py   # Linear, ReLU, softmax_cross_entropy — hand-written forward + backward
+  layers.py   # Linear, ReLU, softmax_cross_entropy: hand-written forward + backward
   model.py    # MLP + Adam optimizer
   data.py     # MNIST download + idx parsing
   train.py    # training loop

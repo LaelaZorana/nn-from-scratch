@@ -68,7 +68,7 @@ def test_gradient_check():
 
 
 def test_overfit_tiny_batch():
-    """A tiny batch should be driven to near-zero loss — proves the loop learns."""
+    """A tiny batch should be driven to near-zero loss: proves the loop learns."""
     rng = np.random.default_rng(0)
     model = MLP(sizes=(20, 32, 16, 4), seed=0)
     opt = Adam(model, lr=1e-2)
