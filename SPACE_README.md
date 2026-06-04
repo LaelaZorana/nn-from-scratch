@@ -11,7 +11,7 @@ license: mit
 
 # Neural Network From Scratch (NumPy)
 
-A multilayer perceptron written entirely by hand in NumPy — every forward and backward
+A multilayer perceptron written entirely by hand in NumPy: every forward and backward
 pass, the softmax cross-entropy, and the Adam optimizer. No PyTorch, no TensorFlow.
 
 It reaches **~97.7% accuracy on MNIST**, and its hand-written backprop is verified against
