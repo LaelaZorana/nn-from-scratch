@@ -1,8 +1,8 @@
 # nn-from-scratch
 
-**🔗 Live demo:** [try it on Hugging Face Spaces](https://huggingface.co/spaces/LaelaZ/nn-from-scratch) — draw a digit and a hand-written NumPy network classifies it.
+**🔗 Live demo:** [try it on Hugging Face Spaces](https://huggingface.co/spaces/LaelaZ/nn-from-scratch). Draw a digit and a hand-written NumPy network classifies it.
 
-A small neural network I built **from scratch in NumPy** — no PyTorch, no TensorFlow, no autograd
+A small neural network I built **from scratch in NumPy**, so no PyTorch, no TensorFlow, no autograd
 framework. I wrote every forward pass, every backward pass, the softmax cross-entropy, and the Adam
 optimizer by hand, because I wanted to understand the chain rule by implementing it rather than
 calling `.backward()`.
@@ -11,8 +11,8 @@ It trains a multilayer perceptron on MNIST to **~97.7% test accuracy** in about 
 
 ## Why this repo is more than "it trains"
 
-The interesting part isn't the accuracy — it's that the hand-written gradients are **verified
-correct**. `tests/test_nn.py` includes a finite-difference **gradient check**: it perturbs each
+The interesting part isn't the accuracy. It's that the hand-written gradients are **verified
+correct**, because `tests/test_nn.py` includes a finite-difference **gradient check**: it perturbs each
 parameter by a tiny amount, measures how the loss actually changes, and confirms that matches the
 analytic gradient the backward pass computed. If the chain rule were wired up wrong anywhere, that
 test would fail. (This is the same build-it-and-prove-it discipline I apply to evaluation work.)
