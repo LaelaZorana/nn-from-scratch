@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import gzip
 import os
-import ssl
 import urllib.request
 from pathlib import Path
 
@@ -20,15 +19,12 @@ FILES = {
 
 def _download(data_dir: Path) -> None:
     data_dir.mkdir(parents=True, exist_ok=True)
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
     for fname in FILES.values():
         dest = data_dir / fname
         if dest.exists():
             continue
         req = urllib.request.Request(BASE + fname, headers={"User-Agent": "nn-from-scratch"})
-        with urllib.request.urlopen(req, context=ctx, timeout=60) as r, open(dest, "wb") as f:
+        with urllib.request.urlopen(req, timeout=60) as r, open(dest, "wb") as f:
             f.write(r.read())
 
 
